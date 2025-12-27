@@ -22,6 +22,37 @@ body {
     max-width: 1000px; /* Prevents it from getting absurdly wide on giant monitors */
     margin: 20px auto;
 }
+
+
+.card {
+    aspect-ratio: 1/1;
+    background-image: url('CardBackground.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    border-radius: 8px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.3s ease;
+    /* Prevents background-image from showing through if the yoga image is small */
+    background-color: transparent; 
+}
+
+/* This rule triggers when the card is clicked */
+.card.flipped { 
+    background-image: none !important; /* Removes the CardBackground.png */
+    background-color: #ffffff; /* Shows a clean white face instead */
+    border: 1px solid #ddd;
+}
+
+.card img {
+    width: 80%; /* Keeps the yoga image sized correctly */
+    height: auto;
+    display: block;
+}
+
 .card {
     aspect-ratio: 1/1;
     background-image: url('CardBackground.png');
@@ -37,12 +68,7 @@ body {
     box-shadow: 0 4px 8px rgba(0,0,0,0.2); /* Adds depth */
 }
 
-/* Enlarges the image inside the card when flipped */
-.card img {
-    width: 90%;
-    height: 90%;
-    object-fit: contain;
-}
+
 
 /* Media query for even bigger cards on tablets/landscape */
 @media (min-width: 768px) {
@@ -62,7 +88,7 @@ body {
     width: 100%;
     text-decoration: none;
 }
-}
 
-.card.flipped { background-color: #fff; font-size: 2rem; }
+
+
 
