@@ -1,28 +1,57 @@
-body { font-family: sans-serif; display: flex; flex-direction: column; align-items: center; 
-	background-image: url('GameBoard.png'); background-repeat: no-repeat; 	
-	background-attachment: fixed; 	background-size: cover;	}
+body { 
+    font-family: sans-serif; 
+    display: flex; 
+    flex-direction: column; 
+    align-items: center; 
+    background-image: url('GameBoard.png'); 
+    background-repeat: no-repeat; 	
+    background-attachment: fixed; 	
+    background-size: cover;
+    margin: 0;
+    padding: 20px;
+    min-height: 100vh;
+}
+
+
 .game-board {
     display: grid;
-    grid-template-columns: repeat(4, 1fr); /* 4 columns for desktop/tablet */
-    gap: 10px;
-    max-width: 400px;
-    width: 100vw; /* Responsive width */
+    /* This creates 4 columns that expand to fill the available space */
+    grid-template-columns: repeat(4, 1fr); 
+    gap: 20px; /* Increased gap for a cleaner look on tablets */
+    width: 90vw; /* Occupies 90% of the screen width */
+    max-width: 1000px; /* Prevents it from getting absurdly wide on giant monitors */
+    margin: 20px auto;
 }
-@media (max-width: 400px) { .game-board { grid-template-columns: repeat(3, 1fr); } } /* Adjust for small phones */
-
 .card {
     aspect-ratio: 1/1;
-	background-image: url('CardBackground.png');
-	background-repeat: no-repeat
-    
-	border-radius: 8px;
+    background-image: url('CardBackground.png');
+    background-repeat: no-repeat;
+    background-size: cover; /* Ensures your background image fills the card */
+    background-position: center;
+    border-radius: 12px;
     cursor: pointer;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 0; /* Hide content initially */
-    transition: transform 0.3s ease; /* Smooth transition for the enlargement */
+    transition: transform 0.2s ease;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2); /* Adds depth */
 }
+
+/* Enlarges the image inside the card when flipped */
+.card img {
+    width: 90%;
+    height: 90%;
+    object-fit: contain;
+}
+
+/* Media query for even bigger cards on tablets/landscape */
+@media (min-width: 768px) {
+    .game-board {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 30px;
+    }
+}
+
 
 .card.matched a {
     display: flex;
