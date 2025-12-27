@@ -1,0 +1,39 @@
+body { font-family: sans-serif; display: flex; flex-direction: column; align-items: center; 
+	background-image: url('GameBoard.png'); background-repeat: no-repeat; 	
+	background-attachment: fixed; 	background-size: cover;	}
+.game-board {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 columns for desktop/tablet */
+    gap: 10px;
+    max-width: 400px;
+    width: 100vw; /* Responsive width */
+}
+@media (max-width: 400px) { .game-board { grid-template-columns: repeat(3, 1fr); } } /* Adjust for small phones */
+
+.card {
+    aspect-ratio: 1/1;
+	background-image: url('CardBackground.png');
+	background-repeat: no-repeat
+    
+	border-radius: 8px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 0; /* Hide content initially */
+    transition: transform 0.3s ease; /* Smooth transition for the enlargement */
+}
+
+.card.matched a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    height: 100%;
+    width: 100%;
+    text-decoration: none;
+}
+}
+
+.card.flipped { background-color: #fff; font-size: 2rem; }
+
