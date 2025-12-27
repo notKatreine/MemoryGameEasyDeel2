@@ -24,7 +24,7 @@ function createBoard() {
 function flipCard(card) {
     if (flippedCards.length < 2 && !card.classList.contains('flipped')) { // checks if there is alread a "flipped" card, if not add card
         card.classList.add('flipped'); // flipped as a css class that is now triggerd
-        card.innerHTML = `<img src="${card.dataset.value}" width="80%">`;
+        card.innerHTML = `<img src="${card.dataset.value}">`;
         flippedCards.push(card);
 
         if (flippedCards.length === 2) { // condition to check if two cards are being compared
@@ -93,4 +93,5 @@ window.addEventListener('pageshow', () => {
         // Or use card.remove(); if you want the other cards to shift and fill the gap
     });
 });
+
 
