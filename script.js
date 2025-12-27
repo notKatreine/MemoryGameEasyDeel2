@@ -60,7 +60,7 @@ function checkMatch() {
             card2.classList.remove('flipped');
             card2.innerHTML = '';
             flippedCards = [];
-        }, 2000);
+        }, 3000);
     }
 }
 
@@ -94,4 +94,5 @@ window.addEventListener('pageshow', () => {
         // Or use card.remove(); if you want the other cards to shift and fill the gap
     });
 });
+
 
