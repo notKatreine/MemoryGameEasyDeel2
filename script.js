@@ -1,4 +1,5 @@
-const imagePaths = ['Picture1.png', 'Picture2.png', 'Picture3.png', 'Picture4.png', 'Picture5.png', 'Picture6.png', 'Picture7.png', 'Picture8.png' ]; // Your actual images
+const imagePaths = [ 'Picture1.png', 'Picture2.png', 'Picture3.png', 'Picture4.png', 'Picture5.png', 'Picture6.png', 'Picture7.png', 'Picture8.png',
+'Picture9.png', 'Picture10.png', 'Picture11.png', 'Picture12.png', 'Picture13.png', 'Picture14.png', 'Picture15.png', 'Picture16.png' ]; // Your actual images
 let cards = [...imagePaths, ...imagePaths]; // Create pairs by dubbling the array
 let flippedCards = []; // temporary array that tracks fliped cards.
 
@@ -24,7 +25,7 @@ function createBoard() {
 function flipCard(card) {
     if (flippedCards.length < 2 && !card.classList.contains('flipped')) { // checks if there is alread a "flipped" card, if not add card
         card.classList.add('flipped'); // flipped as a css class that is now triggerd
-        card.innerHTML = `<img src="${card.dataset.value}">`;
+        card.innerHTML = `<img src="${card.dataset.value}" width="80%">`;
         flippedCards.push(card);
 
         if (flippedCards.length === 2) { // condition to check if two cards are being compared
@@ -59,7 +60,7 @@ function checkMatch() {
             card2.classList.remove('flipped');
             card2.innerHTML = '';
             flippedCards = [];
-        }, 1000);
+        }, 2000);
     }
 }
 
@@ -93,5 +94,4 @@ window.addEventListener('pageshow', () => {
         // Or use card.remove(); if you want the other cards to shift and fill the gap
     });
 });
-
 
