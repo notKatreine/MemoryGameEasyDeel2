@@ -1,4 +1,4 @@
-const imagePaths = [ 'Picture1.png', 'Picture2.png', 'Picture3.png', 'Picture4.png', 'Picture5.png', 'Picture6.png', 'Picture7.png', 'Picture8.png']; // Your actual images
+const imagePaths = [ 'Picture11.png', 'Picture2.png', 'Picture3.png', 'Picture4.png', 'Picture5.png', 'Picture6.png', 'Picture7.png', 'Picture13.png']; // Your actual images
 let cards = [...imagePaths, ...imagePaths]; // Create pairs by dubbling the array
 let flippedCards = []; // temporary array that tracks fliped cards.
 
@@ -93,6 +93,7 @@ window.addEventListener('pageshow', () => {
         // Or use card.remove(); if you want the other cards to shift and fill the gap
     });
 });
+
 
 
 
